@@ -10,13 +10,13 @@
     <header>
         <div class="container">
             <h1>Confeitaria Delícia</h1>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span class="menu-icon"></span>
+                <span class="menu-icon"></span>
+                <span class="menu-icon"></span>
+            </button>
             <nav>
-                <button class="menu-toggle" id="menu-toggle">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-                <ul class="menu" id="menu">
+                <ul>
                     <li><a href="#">Início</a></li>
                     <li><a href="#">Sobre</a></li>
                     <li><a href="#">Cardápio</a></li>
@@ -69,11 +69,11 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var menuToggle = document.getElementById('menu-toggle');
-            var menu = document.getElementById('menu');
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav');
 
             menuToggle.addEventListener('click', function() {
-                menu.classList.toggle('show');
+                nav.classList.toggle('active');
             });
         });
     </script>
