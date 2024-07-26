@@ -1,26 +1,27 @@
-/* CSS completo */
+/* Importação de fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Dancing+Script:wght@400;700&display=swap');
 
-/* Reseta margens e preenchimentos, define box-sizing como border-box */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Define estilo global do corpo */
+/* Estilos gerais */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Fonte padrão do corpo */
     line-height: 1.6;
 }
 
-/* Estilo do container principal */
+/* Container */
 .container {
     width: 80%;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Estilo do cabeçalho */
+/* Cabeçalho */
 header {
     background-color: #f8b400;
     color: #fff;
@@ -28,60 +29,96 @@ header {
     position: relative;
 }
 
-/* Estilo do título no cabeçalho */
-header h1 {
-    text-align: center;
-    margin-bottom: 10px;
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* Estilo do botão de menu hambúrguer */
+header h1 {
+    font-size: 2em;
+    margin: 0;
+    font-family: 'Dancing Script', cursive; /* Fonte personalizada para o título */
+}
+
+/* Menu Hambúrguer */
 .menu-toggle {
-    display: none;
+    display: none; /* Oculta o menu hambúrguer por padrão */
     background: none;
     border: none;
     cursor: pointer;
-    padding: 10px;
-    margin: 0;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    z-index: 1000; /* Garante que o botão fique acima do conteúdo */
 }
 
-/* Estilo dos ícones do menu hambúrguer */
 .menu-icon {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #fff;
+    background: #fff;
     margin: 5px 0;
 }
 
-/* Estilo do menu de navegação */
+/* Navegação */
 nav {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end; /* Alinha os itens do menu à direita */
 }
 
-/* Estilo da lista de navegação */
 nav ul {
     list-style: none;
-    display: flex;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Alinha os itens do menu lado a lado */
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    display: inline-block; /* Garante que o botão ajuste ao texto */
+    padding: 10px 20px;
+    background: transparent;
+    border: none;
+    font-family: 'Roboto', sans-serif; /* Fonte personalizada para o texto do menu */
+    transition: background 0.3s, color 0.3s;
+    color: #fff; /* Cor do texto */
+    text-decoration: none; /* Remove sublinhado do texto */
+    font-weight: bold;
+    line-height: 1.6; /* Alinha o texto verticalmente */
+}
+
+/* Efeitos de hover e clique */
+nav ul li a:hover,
+nav ul li a:focus {
+    background: rgba(255, 255, 255, 0.2); /* Cor de fundo quando passa o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
+    border-radius: 5px;
+}
+
+/* Estilos do menu quando visível em telas menores */
+nav.active {
+    display: block; /* Exibe o menu de navegação quando ativado */
+    position: absolute;
+    top: 70px; /* Ajuste conforme necessário */
+    right: 0;
+    background-color: #f8b400;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav.active ul {
+    display: flex; /* Exibe os itens do menu em linha */
+    flex-direction: column; /* Coloca os itens do menu em coluna */
     padding: 0;
 }
 
-/* Estilo dos itens da lista de navegação */
-nav ul li {
-    margin: 0 15px;
+nav.active ul li {
+    margin: 10px 0; /* Espaçamento vertical dos itens quando ativado */
 }
 
-/* Estilo dos links da navegação */
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Estilo da seção hero */
+/* Seções */
 .hero {
     background: url('../img/bolo.jpg') no-repeat center center/cover;
     color: #fff;
@@ -89,19 +126,17 @@ nav ul li a {
     text-align: center;
 }
 
-/* Estilo do título da seção hero */
 .hero h2 {
     margin-bottom: 20px;
     font-size: 2.5em;
+    font-family: 'Dancing Script', cursive; /* Fonte personalizada para os títulos na seção hero */
 }
 
-/* Estilo do texto da seção hero */
 .hero p {
     margin-bottom: 20px;
     font-size: 1.2em;
 }
 
-/* Estilo do botão de chamada para ação */
 .cta-button {
     background-color: #ff6f61;
     color: #fff;
@@ -109,23 +144,27 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
+    font-family: 'Roboto', sans-serif; /* Fonte padrão para o texto do botão */
 }
 
-/* Estilo das seções About e Menu */
+/* Sobre e Cardápio */
 .about,
 .menu {
     padding: 50px 0;
     text-align: center;
 }
 
-/* Estilo dos itens do menu */
+.about h2,
+.menu h2 {
+    font-family: 'Dancing Script', cursive; /* Fonte personalizada para os títulos dessas seções */
+}
+
 .menu-items {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-/* Estilo de cada item do menu */
 .menu-item {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -135,13 +174,13 @@ nav ul li a {
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* Estilo do título de cada item do menu */
 .menu-item h3 {
     margin-bottom: 10px;
     color: #f8b400;
+    font-family: 'Dancing Script', cursive; /* Fonte personalizada para os títulos dos itens de menu */
 }
 
-/* Estilo do rodapé */
+/* Rodapé */
 footer {
     background-color: #333;
     color: #fff;
@@ -149,28 +188,21 @@ footer {
     padding: 10px 0;
 }
 
-/* Media Queries para Responsividade */
-
-/* Estilos para telas menores que 1024px */
-@media (max-width: 1024px) {
-    .container {
-        width: 90%;
+/* Media Queries */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none; /* Oculta o menu hambúrguer em telas maiores */
     }
 
-    .hero h2 {
-        font-size: 2em;
+    nav {
+        display: flex; /* Exibe a navegação padrão em telas maiores */
     }
 
-    .hero p {
-        font-size: 1.1em;
-    }
-
-    .menu-item {
-        width: 45%;
+    nav.active {
+        display: none; /* Oculta o menu hambúrguer quando a navegação padrão está visível */
     }
 }
 
-/* Estilos para telas menores que 768px */
 @media (max-width: 768px) {
     .container {
         width: 100%;
@@ -190,31 +222,33 @@ footer {
     }
 
     .menu-toggle {
-        display: block;
+        display: block; /* Exibe o menu hambúrguer em telas menores */
     }
 
     nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
+        display: none; /* Oculta a navegação padrão em telas menores */
     }
 
     nav.active {
-        display: flex;
+        display: block; /* Exibe o menu hambúrguer quando ativado */
+        position: absolute;
+        top: 70px; /* Ajuste conforme necessário */
+        right: 0;
+        background-color: #f8b400;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
     }
 
-    nav ul {
-        display: block;
-        padding: 0;
+    nav.active ul {
+        flex-direction: column; /* Exibe os itens do menu em coluna */
     }
 
-    nav ul li {
-        margin: 10px 0;
+    nav.active ul li {
+        margin: 10px 0; /* Espaçamento vertical dos itens quando ativado */
     }
 }
 
-/* Estilos para telas menores que 480px */
 @media (max-width: 480px) {
     .hero {
         padding: 50px 0;
@@ -231,4 +265,49 @@ footer {
     .menu-item {
         width: 100%;
     }
+}
+
+/* Contato */
+.contact {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.contact h2 {
+    font-family: 'Dancing Script', cursive; /* Fonte personalizada para o título */
+    margin-bottom: 20px;
+}
+
+.contact p {
+    margin-bottom: 30px;
+    font-size: 1.2em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.cta-button {
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif; /* Fonte padrão para o texto do botão */
 }
