@@ -11,7 +11,12 @@
         <div class="container">
             <h1>Confeitaria Delícia</h1>
             <nav>
-                <ul>
+                <button class="menu-toggle" id="menu-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="menu" id="menu">
                     <li><a href="#">Início</a></li>
                     <li><a href="#">Sobre</a></li>
                     <li><a href="#">Cardápio</a></li>
@@ -61,5 +66,16 @@
             <p>&copy; 2024 Confeitaria Delícia. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var menuToggle = document.getElementById('menu-toggle');
+            var menu = document.getElementById('menu');
+
+            menuToggle.addEventListener('click', function() {
+                menu.classList.toggle('show');
+            });
+        });
+    </script>
 </body>
 </html>
