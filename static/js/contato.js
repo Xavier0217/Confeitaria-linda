@@ -1,6 +1,9 @@
-// contato.js
+document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
 
-function toggleMenu() {
-    const navbar = document.getElementById('navbar');
-    navbar.classList.toggle('active');
-}
+    menuToggle.addEventListener('click', function () {
+        nav.classList.toggle('active');
+    });
+});
+
