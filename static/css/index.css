@@ -49,7 +49,7 @@ header h1 {
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 1000; /* Garante que o botão fique acima do conteúdo */
+    z-index: 1001; /* Garante que o botão fique acima do conteúdo */
 }
 
 .menu-icon {
@@ -111,10 +111,10 @@ nav.active {
     text-align: center;
     padding: 10px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra ao menu */
+    z-index: 1000; /* Garante que o menu de navegação fique acima da imagem */
 }
 
 nav.active ul {
-    display: flex; /* Exibe os itens do menu em linha */
     flex-direction: column; /* Coloca os itens do menu em coluna */
     padding: 0;
 }
@@ -269,10 +269,12 @@ footer {
         width: 100%;
         text-align: center;
         padding: 10px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra ao menu */
+        z-index: 1000; /* Garante que o menu de navegação fique acima da imagem */
     }
 
     nav.active ul {
-        flex-direction: column; /* Exibe os itens do menu em coluna */
+        flex-direction: column; /* Coloca os itens do menu em coluna */
     }
 
     nav.active ul li {
